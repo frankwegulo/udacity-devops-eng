@@ -64,3 +64,4 @@ workflows:
       - print_output_file
       - pass_parameters
       - build
+      - failiure_triger
