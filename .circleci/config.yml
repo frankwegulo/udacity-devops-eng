@@ -41,7 +41,15 @@ jobs:
           name: "Echo a variable that is part of our project"
           command:
             echo $MY_ENV_VAR
-
+  failiure_triger:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: exit 1
+      - run:
+          command: echo "This one failed"
+          when: on_fail
+    
 # # Invoke jobs via workflows
 # # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
